@@ -1,0 +1,246 @@
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  font-size: 1rem;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 300;
+  line-height: 1.5em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: inherit;
+}
+h1,
+h2,
+h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+h4,
+h5,
+h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+h1 {
+  font-size: 3.3125rem;
+  line-height: 1.15em;
+}
+h2 {
+  font-size: 2.25rem;
+  line-height: 1.5em;
+}
+h3 {
+  font-size: 1.5625rem;
+  line-height: 1.4em;
+}
+h4 {
+  font-size: 1.125rem;
+  line-height: 1.5em;
+}
+h5 {
+  font-size: 1.0625rem;
+  line-height: 1.55em;
+}
+h6 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+p {
+  font-size: 14px;
+  margin: 0 0 10px;
+}
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  background-color: #e5e5e5;
+  color: $black-color;
+  margin: 0;
+  font-size: 1rem;
+  text-align: left;
+}
+
+legend {
+  border-bottom: 0;
+}
+
+// Prevent highlight on mobile
+* {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  &:focus {
+    outline: 0;
+  }
+}
+
+a {
+  // color: $link-color;
+  // color: #333333;
+  // font-size:20px;
+  text-decoration: none;
+  background-color: transparent;
+  &:hover,
+  &:focus {
+    color: darken($link-color, 5%);
+    text-decoration: none;
+  }
+}
+
+label {
+  font-size: 14px;
+  line-height: 1.42857;
+  color: $checkboxes-text-color;
+  font-weight: 400;
+}
+small {
+  font-size: 75%;
+  color: #777;
+  font-weight: 400;
+}
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+form {
+  margin-bottom: 1.125rem;
+}
+
+.brandright{
+  text-align: right !important;
+  color: #ffffff;
+}
+
+
+.player-wrapper {
+  position: relative;
+  padding-top: 56.25%;
+  
+    /* Player ratio: 100 / (1280 / 720) */
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 1024px;
+  max-height:1024px;
+
+}
+
+.square-box {
+  position: relative;
+  padding-bottom: 100%;
+  /* 1:1 */
+  height: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+
+.widescreen2 {
+  // position: absolute;
+  height: 0;
+  // left: -38.88%;
+  // right: -38.88%;
+}
+
+.square-box .widescreen2 {
+  padding-bottom: 100%;
+  /* 1:1 ?? */
+  // left: -38.88%;
+  // right: -38.88%;
+}
+
+
+iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+
+.hdrbg,
+.hdrbgbtc {
+  position:fixed;
+  z-index: -1;
+}
+
+.hdrbg video{
+  width: 100%;
+  max-width: 1575px;
+  position: absolute;
+  margin-right: -50;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.blklink {
+  color: #333333;
+  font-size:20px;
+}
+
+
+/* Gradient transparent - color - transparent */
+
+hr.style-two {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+/* Double-color dashed line */
+
+hr.style-three {
+  border: 0;
+  border-bottom: 1px dashed #ccc;
+  background: #999;
+}
+
+
+hr.style-four {
+  height: 12px;
+  border: 0;
+  box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* Cloud */
+
+hr.style-five {
+  border: 0;
+  height: 0;
+  /* Firefox... */
+  box-shadow: 0 0 10px 1px black;
+}
+
+hr.style-five:after {
+  /* Not really supposed to work, but does */
+  content: "\00a0";
+  /* Prevent margin collapse */
+}
