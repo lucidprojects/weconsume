@@ -15,7 +15,7 @@ const ShowInfo = (props) => {
   console.log(`annualco23 ${annualco2e}`);
   co2eD = document.getElementById("co2e");
   if (co2eD) { co2eD.innerHTML = "Daily CO2e: " + data[0].co2edaily + "kg";
-    console.log(`just got co2eD val of ${co2eD}`);
+    console.log(`just got co2eD val of ${data[0].co2edaily}`);
   }
   document.getElementById("dailyavg").innerHTML = data[0].co2edailyavg;
   document.getElementById("annualavg").innerHTML = annualco2e.toFixed(2);
