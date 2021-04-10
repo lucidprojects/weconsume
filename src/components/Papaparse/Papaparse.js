@@ -1,8 +1,5 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Papa from 'papaparse';
-
-// import Gan2Play from "components/Gan2Play/Gan2Play.js";
-import GanToPlay from "components/GanToPlay/GanToPlay.js";
 
 const MYSHEET = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQLNYCe1yagGCePlBPasi2bjAGc3X4cPIeAxJPpegHjCdnJ7bRBRLZkqbSGvWyymACFbiABvhzzwRzK/pub?gid=871249801&single=true&output=csv";
 
@@ -21,25 +18,16 @@ const ShowInfo = (props) => {
   document.getElementById("dailyavg").innerHTML = data[0].co2edailyavg;
   document.getElementById("annualavg").innerHTML = annualco2e.toFixed(2);
   
-  // return <GanToPlay co2eD={12}/>
-        //  <GanToPlay co2eD={2}/>
-
-
-  // return (
-
-  // )
-
-  const WhichGan = () => {
-   console.log("Papa WhichGan func data = " + data[0].co2edaily);
-    if (data[0].co2edaily){
-      console.log(`I got co2edaily data ${data[0].co2edaily}`);
-      //  return <GanToPlay co2eD={data[0].co2edaily} />
-      return <GanToPlay co2eD={12} />
-    }
-  }
-  WhichGan(data[0].co2edaily);
   
+
+
 }
+
+// const [renderShowInfo, updateShowInfo] = useState(new Date()); // default value can be anything you want
+
+//   useEffect(() => {
+//     setTimeout(() => updateShowInfo(new Date(), console.log("here")), 5000);
+//   }, [renderShowInfo]);
 
 
 class Papaparse extends React.Component {

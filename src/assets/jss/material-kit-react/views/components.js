@@ -6,6 +6,8 @@ const componentsStyle = {
   brand: {
     color: "#FFFFFF",
     textAlign: "left",
+    zIndex: "100",
+    position: "relative",
   },
   brandright: {
     color: "#FFFFFF",
@@ -46,6 +48,9 @@ const componentsStyle = {
     fontSize: "19px",
     textAlign: "left",
   },
+  // container: {
+  //   index: "100",
+  // },
 };
 
 export default componentsStyle;

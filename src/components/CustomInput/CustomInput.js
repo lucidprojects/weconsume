@@ -8,6 +8,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import Input from "@material-ui/core/Input";
+import Select from '@material-ui/core/Select';
 
 import styles from "assets/jss/material-kit-react/components/customInputStyle.js";
 
@@ -24,7 +25,9 @@ export default function CustomInput(props) {
     error,
     white,
     inputRootCustomClasses,
-    success
+    success,
+    age,
+    setAge
   } = props;
 
   const labelClasses = classNames({

@@ -15,6 +15,8 @@ import Parallax from "components/Parallax/Parallax.js";
 // sections for this page
 import HeaderLinks from "components/Header/HeaderLinks.js";
 import SectionBasics from "./Sections/SectionBasics.js";
+import Papa from 'papaparse';
+
 
 // papaparse csv test
 import BlkTxs from "components/Blkdata/Blkdata.js";
@@ -24,9 +26,8 @@ import ReactPlayer from "react-player";
 
 import styles from "assets/jss/material-kit-react/views/components.js";
 
-let myGan = 1;
-
 const useStyles = makeStyles(styles);
+
 
 export default function Components(props) {
   const classes = useStyles();
@@ -34,6 +35,7 @@ export default function Components(props) {
   
   return (
     <div>
+      <Papaparse/>
       <Header
         brand="We Consume"
         rightLinks={<HeaderLinks />}
@@ -74,7 +76,6 @@ export default function Components(props) {
             </GridItem>
             <GridItem xs={12} sm={12} md={6} lg={6}>
               <div className={classes.brandright}>
-                { console.log("in Components.js " + myGan) }
                 <h1 id="co2e" className={classes.title}></h1>
                 
               </div>
@@ -93,4 +94,3 @@ export default function Components(props) {
 
   
 }
-

@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b3e26cc8.chunk.css",
+    "main.js": "/static/js/main.e8e0888e.chunk.js",
+    "main.js.map": "/static/js/main.e8e0888e.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.47788c5d.js",
+    "runtime-main.js.map": "/static/js/runtime-main.47788c5d.js.map",
+    "static/js/2.fe36d716.chunk.js": "/static/js/2.fe36d716.chunk.js",
+    "static/js/2.fe36d716.chunk.js.map": "/static/js/2.fe36d716.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.639faede6696df4aa97239d9bae72065.js": "/precache-manifest.639faede6696df4aa97239d9bae72065.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.b3e26cc8.chunk.css.map": "/static/css/main.b3e26cc8.chunk.css.map",
+    "static/js/2.fe36d716.chunk.js.LICENSE.txt": "/static/js/2.fe36d716.chunk.js.LICENSE.txt",
+    "static/media/apocogan_40s.mp4": "/static/media/apocogan_40s.57ac6351.mp4",
+    "static/media/avatar.jpg": "/static/media/avatar.f1d71f77.jpg",
+    "static/media/bitcoin_network.mp4": "/static/media/bitcoin_network.b972c20c.mp4",
+    "static/media/christian.jpg": "/static/media/christian.56633ed3.jpg",
+    "static/media/color_lines.jpg": "/static/media/color_lines.da6fca93.jpg",
+    "static/media/earth_spin_mask_2.mp4": "/static/media/earth_spin_mask_2.b849f206.mp4",
+    "static/media/kendall.jpg": "/static/media/kendall.e0508cc9.jpg",
+    "static/media/landing-bg.jpg": "/static/media/landing-bg.df8fd3ef.jpg",
+    "static/media/meters_sml.jpg": "/static/media/meters_sml.d018c78e.jpg",
+    "static/media/waterfall.mp4": "/static/media/waterfall.40119d12.mp4",
+    "static/media/weconsume_hdr.jpg": "/static/media/weconsume_hdr.3b68f053.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.47788c5d.js",
+    "static/js/2.fe36d716.chunk.js",
+    "static/css/main.b3e26cc8.chunk.css",
+    "static/js/main.e8e0888e.chunk.js"
+  ]
+}

@@ -18,6 +18,7 @@ class GanToPlay extends React.Component {
   }
 
   whichGan2Play(co2eD) { 
+    console.log(`my co2eD val is ${co2eD} `);
     if(co2eD < 11.1826){
       url = require("assets/video/waterfall.mp4");
     } else {

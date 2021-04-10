@@ -36,7 +36,7 @@ export default function ProductSection() {
           <GridItem xs={12} sm={12} md={4}>
             <InfoArea
               title="Driving Renewables"
-              description="Bitcoin is a energy market incentivizing participants to seek out cheap energy.  That includes renewables and previously oversupplied power."
+              description="Bitcoin is an energy market incentivizing participants to seek out cheap energy.  That includes renewables and previously oversupplied power."
               icon={Chat}
               iconColor="info"
               vertical

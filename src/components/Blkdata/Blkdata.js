@@ -33,9 +33,12 @@ class BlkTxs extends React.Component {
         // console.log("my msgs " + blktxs.msgs);
         return blktxs.msgs.map(function (blktxmsg, index) {
           const div = document.getElementById("consume_msgs");
+          // console.log(`blktxmsg is ${blktxmsg}`);
+          if (blktxmsg.match(/[/]/)) {
           let divblk = createNode("div");
           divblk.innerHTML = `<a href="https://iconsu.me/tx/${blktxs.txids[index]}" target="_blank" class="blklink">${blktxmsg}</a><hr class="style-three">`;
           append(div, divblk);
+          }
         });
       });
     
