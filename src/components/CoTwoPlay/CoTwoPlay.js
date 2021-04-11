@@ -64,7 +64,7 @@ export default function CoTwoInfo({ name }) {
         // </div>
 		<div>	
 			<Co2e_check />
-			<Co2eUpdate />
+			{/* <Co2eUpdate /> */}
 		</div>
 	)
 }
