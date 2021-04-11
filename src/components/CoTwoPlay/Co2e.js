@@ -34,6 +34,13 @@ export function co2e() {
                 console.log(`my co2e = ${myCo2e}`);
                 // co2eD.good.emissions = myCo2e;
                 co2eD = myCo2e;
+                setTimeout(() => {
+                    resolve(
+                    myCo2e = results.data[0].co2edaily,
+                    co2eD = myCo2e + ' delay',
+                    console.log(`my co2eD = ${co2eD} in first promise after 13.5 secs`)
+                    )
+                }, 13500)
             })  
             .then(
                 setTimeout(() => {
@@ -41,7 +48,15 @@ export function co2e() {
                     // co2eD[name]
                     co2eD
                     )
-                }, 1500));
+                }, 1500),
+                setTimeout(() => {
+                    resolve(
+                    // co2eD[name]
+                    co2eD = myCo2e + '15 delay',
+                    console.log(`my co2eD = ${co2eD} after 15.5 secs`)
+                    )
+                }, 15500)
+                );
           
         
     })

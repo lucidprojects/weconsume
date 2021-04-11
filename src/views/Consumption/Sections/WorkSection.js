@@ -212,7 +212,7 @@ export default function WorkSection() {
       <br />
       <div>
       {p5State === 'hide' && (
-        <ShowP5Button setP5State={triggerShowP5} val="ShowP5"/>
+        <ShowP5Button setP5State={triggerShowP5} val="Show Your FutureScape GAN"/>
       )}
 
       {p5State === 'show' && <P5Gan em={co2Calc}/>}

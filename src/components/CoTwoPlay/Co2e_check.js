@@ -1,0 +1,68 @@
+import React, { useState, useEffect } from "react";
+import { co2e } from 'components/CoTwoPlay/Co2e';
+import ReactPlayer from "react-player";
+import { makeStyles } from "@material-ui/core/styles";
+import { Link } from "react-router-dom";
+
+import styles from "assets/jss/material-kit-react/views/components.js";
+
+const useStyles = makeStyles(styles);
+
+const formateDate = date => {
+  // here you should formate the date to display it the way you want
+  // e.g show it in minutes
+  // e.g. use momentjs
+  return parseInt(date / 60000);
+};
+
+
+let co2Thresh = 11.28;
+let myTime = new Date();
+let co2eResult;
+let count = 0;
+
+export function Co2e_check() {
+  const classes = useStyles();    
+  let url;
+  const [CoTwoInfo, setCoTwoInformation] = useState();  
+  const [CurrentCo2e, setCurrentCo2e] = useState(co2e); // default value can be anything you want
+//   const [fakeCurrentDate, setFakeCurrentDate] = useState(new Date()); // default value can be anything you want
+
+  useEffect(() => {
+    setTimeout(() => setCurrentCo2e(co2e),
+    myTime = formateDate(new Date()),
+    console.log(`myTime ${myTime}`),
+    co2e()
+		.then(data =>
+            co2eResult = data,
+			setCoTwoInformation(co2eResult),
+            setTimeout(() => setCoTwoInformation(co2eResult), 3000 ),
+            setTimeout(() => setCoTwoInformation(co2eResult), 90000 )
+		),
+        setTimeout(() => setCoTwoInformation('44'), 30000 )
+        
+        // setTimeout(() => setCoTwoInformation('44'),
+        // myTime = formateDate(new Date()),
+        // console.log(`myTime 2 ${myTime}`),
+        // 30000 )
+    , count++,
+    console.log("count = " + count),
+     60000)}, [CurrentCo2e]);
+
+  return (
+    <div id="video">
+          <div className={classes.title}>
+              <h3>I've set myself a goal of 4.5mt of CO2e annually.  Can I meet it? The below animation will be a daily reminder of how I'm doing. Learn more on the <Link to="/consumption">consumption</Link> page.</h3>
+            <h3>Futurescape GANs = a {(CoTwoInfo > co2Thresh) ? `bleak future based on ${CoTwoInfo}kg above` : `more homogenous future based on ${CoTwoInfo}kg at or below`} a goal of 11.28kg daily emissions. </h3>
+            {/* <h3>Futurescape GANs = a {(CoTwoInfo > co2Thresh) ? `bleak future based on ${CoTwoInfo}kg /${myTime} count = ${count}  above` : `more homogenous future based on ${CoTwoInfo}kg ${myTime} count = ${count} at or below`} a goal of 11.28kg daily emissions. </h3> */}
+            {/* <h3>Futurescape GANs = a {(CoTwoInfo?.emissions > 1.28) ? "bleak future based on above" : "more homogenous future based on at or below"} a goal of 11.28kg daily emissions. </h3> */}
+          </div>
+          <div className="square-box">
+            <div>
+				<div className="hide">{(CoTwoInfo > co2Thresh) ? url = require("assets/video/apocogan_40s.mp4") : url = require("assets/video/waterfall.mp4") }</div>
+				<ReactPlayer className="widescreen2" url={url} playing={true} volume={0} muted={true} loop={true} width="100%" height="auto"  />
+			</div>
+          </div>
+        </div>
+  );
+}
