@@ -3,17 +3,21 @@ import Papa from 'papaparse';
 const MYSHEET = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQLNYCe1yagGCePlBPasi2bjAGc3X4cPIeAxJPpegHjCdnJ7bRBRLZkqbSGvWyymACFbiABvhzzwRzK/pub?gid=871249801&single=true&output=csv";
 
 
-let co2eD = {
-    good: {
-        emissions: ''
-    },
-    bad: {
-        emissions: ''
-    }
-}
+// let co2eD = {
+//     good: {
+//         emissions: ''
+//     },
+//     bad: {
+//         emissions: ''
+//     }
+// }
 
 
-export function co2e(name) {
+let co2eD = '';
+
+
+//export function co2e(name) {
+export function co2e() {
 
     return new Promise((resolve) =>{
             let myCo2e;
@@ -28,12 +32,14 @@ export function co2e(name) {
             .then(function(results) { 
                 myCo2e = results.data[0].co2edaily;
                 console.log(`my co2e = ${myCo2e}`);
-                co2eD.good.emissions = myCo2e;
+                // co2eD.good.emissions = myCo2e;
+                co2eD = myCo2e;
             })  
             .then(
                 setTimeout(() => {
                     resolve(
-                    co2eD[name]
+                    // co2eD[name]
+                    co2eD
                     )
                 }, 1500));
           
