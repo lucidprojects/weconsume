@@ -3,6 +3,7 @@ import { co2e } from 'components/CoTwoPlay/Co2e';
 import ReactPlayer from "react-player";
 import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
 
 import styles from "assets/jss/material-kit-react/views/components.js";
 
@@ -63,12 +64,20 @@ export function Co2e_check() {
     , count++,
     console.log("count = " + count),
      60000)}, [CurrentCo2e]);
+    
+    // const useScroll = () => {
+    //     const elRef = useRef(null);
+    //     const executeScroll = () => elRef.current.scrollIntoView();
+
+    //     return [executeScroll, elRef];
+    // };
+
 
   return (
      
     <div id="video">
           <div className={classes.title}>
-              <h3>I've set myself a goal of 4.5mt of CO2e annually.  Can I meet it? The below animation will be a daily reminder of how I'm doing. Learn more on the <Link to="/consumption">consumption</Link> page and explore my daily consumption patterns on the <Link to="/#inputs">consumption ledger</Link> below.</h3>
+              <h3>I've set myself a goal of 4.5mt of CO2e annually.  Can I meet it? The below animation will be a daily reminder of how I'm doing. Learn more on the <Link to="/consumption">consumption</Link> page and explore my daily consumption patterns on the <HashLink to="#inputs">consumption ledger</HashLink> below.</h3>
               {(CoTwoInfo) ?
               <h3>Futurescape GAN = a  {(CoTwoInfo > co2Thresh) ? `bleak future based on ${CoTwoInfo}kg above` : `more homogenous future based on ${CoTwoInfo}kg at or below`} a goal of 11.28kg daily emissions. </h3> : <h3></h3>}
             {/* <h3>Futurescape GANs = a {(CoTwoInfo > co2Thresh) ? `bleak future based on ${CoTwoInfo}kg /${myTime} count = ${count}  above` : `more homogenous future based on ${CoTwoInfo}kg ${myTime} count = ${count} at or below`} a goal of 11.28kg daily emissions. </h3> */}
