@@ -18,6 +18,7 @@ const formateDate = date => {
 
 let co2Thresh = 11.28;
 let myTime = new Date();
+let currentTime;
 let co2eResult;
 let count = 0;
 
@@ -28,6 +29,14 @@ export function Co2e_check() {
   const [CurrentCo2e, setCurrentCo2e] = useState(co2e); // default value can be anything you want
 //   const [fakeCurrentDate, setFakeCurrentDate] = useState(new Date()); // default value can be anything you want
 
+    const checkCo2 = (co2) =>{
+        setCoTwoInformation(co2);
+        currentTime = new Date();
+        currentTime = formateDate(currentTime);
+        console.log(`ran checkCo2 at ${currentTime}`)
+
+    } 
+
   useEffect(() => {
     setTimeout(() => setCurrentCo2e(co2e),
     myTime = formateDate(new Date()),
@@ -36,9 +45,15 @@ export function Co2e_check() {
 		.then(data =>
             co2eResult = data,
 			setCoTwoInformation(co2eResult),
-            setTimeout(() => setCoTwoInformation(co2eResult), 3000 ),
-            setTimeout(() => setCoTwoInformation(co2eResult), 90000 )
+            // setTimeout(() => setCoTwoInformation(co2eResult), 3000 ),
+            // setTimeout(() => setCoTwoInformation(co2eResult), 13000 ),
+            // setTimeout(() => setCoTwoInformation(co2eResult), 90000 )
+            setTimeout(() => checkCo2(co2eResult), 3000 ),
+            setTimeout(() => checkCo2(co2eResult), 13000 ),
+            setTimeout(() => checkCo2(co2eResult), 23000 ),
+            setTimeout(() => checkCo2(co2eResult), 90000 )
 		),
+        setTimeout(() => checkCo2(co2eResult), 25000 ),
         setTimeout(() => setCoTwoInformation('44'), 30000 )
         
         // setTimeout(() => setCoTwoInformation('44'),
