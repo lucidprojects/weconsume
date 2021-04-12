@@ -49,11 +49,13 @@ export function Co2e_check() {
             // setTimeout(() => setCoTwoInformation(co2eResult), 3000 ),
             // setTimeout(() => setCoTwoInformation(co2eResult), 13000 ),
             // setTimeout(() => setCoTwoInformation(co2eResult), 90000 )
+            setTimeout(() => checkCo2(co2eResult), 1500 ),
             setTimeout(() => checkCo2(co2eResult), 3000 ),
             setTimeout(() => checkCo2(co2eResult), 13000 ),
             setTimeout(() => checkCo2(co2eResult), 23000 ),
             setTimeout(() => checkCo2(co2eResult), 90000 )
 		),
+        setTimeout(() => setCoTwoInformation(co2eResult),console.log(`ran setCoTwoInformation on ${co2eResult}` + new Date()), 3000 ),
         setTimeout(() => checkCo2(co2eResult), 25000 ),
         setTimeout(() => checkCo2(co2eResult), 26000 ),
         setTimeout(() => setCoTwoInformation('44'), 30000 )
