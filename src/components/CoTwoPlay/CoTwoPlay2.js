@@ -78,6 +78,8 @@ export default function CoTwoInfo2({ name }) {
 		{/* <div>
 			{(myCo2eV >= co2Thresh) ? rows + ` greater than ${co2Thresh}` : rows + ` less than ${co2Thresh}`}
 		</div> */}
+		{(myCo2eV) ?
+		<h3>Futurescape GAN = a  {(myCo2eV > co2Thresh) ? `bleak future based on ${myCo2eV}kg above` : `more homogenous future based on ${myCo2eV}kg at or below`} a goal of 11.28kg daily emissions. </h3> : <h3></h3>}
 		<div className="hide">
 			{myCo2eV > co2Thresh ? url = require("assets/video/apocogan_40s.mp4") : url = require("assets/video/waterfall.mp4")}{" "}
 		</div>
