@@ -13,6 +13,7 @@ import GridItem from "components/Grid/GridItem.js";
 import BlkTxs from "components/Blkdata/Blkdata.js";
 
 import CoTwoInfo from 'components/CoTwoPlay/CoTwoPlay';
+import CoTwoInfo2 from 'components/CoTwoPlay/CoTwoPlay2';
 
 // import PapaparseGan from "components/PapaparseGan/PapaparseGan.js";
 
@@ -52,7 +53,11 @@ export default function SectionBasics(props) {
           </div>
           <div className="square-box">
             <GanToPlay co2eD={props.myGan}/> */}
-            <CoTwoInfo name={co2}/>
+            
+            {/* <CoTwoInfo name={co2}/> */}
+            <CoTwoInfo2/>
+
+
           {/* </div>
         </div> */}
         <div className={classes.space50} />

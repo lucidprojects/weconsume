@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { co2e } from 'components/CoTwoPlay/Co2e';
 import { Co2e_check } from 'components/CoTwoPlay/Co2e_check';
-import { Co2eUpdate } from 'components/CoTwoPlay/Co2e_update_test';
+// import { Co2eUpdate } from 'components/CoTwoPlay/Co2e_update_test';
+// import { Co2eUpdateParse } from 'components/CoTwoPlay/Co2e_update_w_parse';
+import { Co2Gan } from 'components/CoTwoPlay/Co2e_parse_w_gan';
 import ReactPlayer from "react-player";
 import classNames from "classnames";
 // @material-ui/core components
+import { Link } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
 import { makeStyles } from "@material-ui/core/styles";
 
 import styles from "assets/jss/material-kit-react/views/components.js";
@@ -63,7 +67,11 @@ export default function CoTwoInfo({ name }) {
         //   </div>
         // </div>
 		<div>	
-			<Co2e_check />
+			<h3>I've set myself a goal of 4.5mt of CO2e annually.  Can I meet it? The animation below will be a daily reminder of how I'm doing. Learn more on the <Link to="/consumption">consumption</Link> page and explore my daily consumption patterns on the <HashLink to="#inputs">consumption ledger</HashLink> below.</h3>
+            <Co2Gan /> 
+			{/* <Co2e_check /> */}
+
+			{/* <Co2eUpdateParse /> */}
 			{/* <Co2eUpdate /> */}
 		</div>
 	)

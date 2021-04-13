@@ -26,7 +26,7 @@ let count = 0;
 export function Co2e_check() {
   const classes = useStyles();    
   let url;
-  const [CoTwoInfo, setCoTwoInformation] = useState();  
+  const [CoTwoInfo, setCoTwoInformation] = useState(null);  
   const [CurrentCo2e, setCurrentCo2e] = useState(co2e); // default value can be anything you want
 //   const [fakeCurrentDate, setFakeCurrentDate] = useState(new Date()); // default value can be anything you want
 
@@ -37,6 +37,9 @@ export function Co2e_check() {
         console.log(`ran checkCo2 at ${currentTime} my Co2e is ${co2}`)
 
     } 
+  useEffect(() => {
+    co2e().then(data => console.log(`my data is ${data} ` + new Date()));
+  });  
 
   useEffect(() => {
     setTimeout(() => setCurrentCo2e(co2e),
@@ -68,13 +71,13 @@ export function Co2e_check() {
     console.log("count = " + count),
      60000)}, [CurrentCo2e]);
     
-    // const useScroll = () => {
-    //     const elRef = useRef(null);
-    //     const executeScroll = () => elRef.current.scrollIntoView();
 
-    //     return [executeScroll, elRef];
-    // };
-
+  
+  if (CoTwoInfo === null){
+      return (<div>
+          <h3>Please wait, Calculating potential future...</h3>
+          </div>);
+  }  
 
   return (
      
