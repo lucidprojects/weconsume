@@ -75,9 +75,9 @@ export default function CoTwoInfo2({ name }) {
 			<h3>Over the last half century we've made some poor decisions. In order to right the ship, drastic sacrifices are required.</h3>
 			<h3>I've set myself a goal of 4.5mt of CO2e annually.  Can I meet it? The animation below will be a daily reminder of how I'm doing. Learn more on the <Link to="/consumption">consumption</Link> page and explore my daily consumption patterns on the <HashLink to="#inputs">consumption ledger</HashLink> below.</h3>
 		</div>
-		<div>
+		{/* <div>
 			{(myCo2eV >= co2Thresh) ? rows + ` greater than ${co2Thresh}` : rows + ` less than ${co2Thresh}`}
-		</div>
+		</div> */}
 		<div className="hide">
 			{myCo2eV > co2Thresh ? url = require("assets/video/apocogan_40s.mp4") : url = require("assets/video/waterfall.mp4")}{" "}
 		</div>
