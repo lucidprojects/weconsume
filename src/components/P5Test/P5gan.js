@@ -7,11 +7,11 @@ class P5Gan extends React.Component {
     this.myRef = React.createRef()
     this.state = { showP5: false }
     if(this.props.em < 11.22){
-      console.log("lower than goal");
+      //console.log("lower than goal");
       this.fetchUrl = "waterfalgan-079231ad";
       this.fetchKey = "iJBWJJ3D0evaQ0r3HvUylA==";
     } else {
-      console.log("higher than goal");
+      //console.log("higher than goal");
       this.fetchUrl = "volcanogan-9fbeaed1";
       this.fetchKey = "pBKNXuNSgN1fhZZNw0GSJA==";
     }
@@ -35,9 +35,11 @@ class P5Gan extends React.Component {
         ganCanvas = p.createCanvas(550, 700);
         ganCanvas.mouseClicked(p.ganClick);
         p.getServerState();
-        p.generateImage(this.props.em);
-        console.log(this.props.em);
-        console.log("here");
+        p.updateGan(this.props.em);
+        // p.generateImage(this.props.em);
+        // console.log(this.props.em);
+
+        // console.log("here");
         p.getServerState();
         outputImage = p.createImg("", "");
         outputImage.hide();
@@ -124,10 +126,10 @@ class P5Gan extends React.Component {
        
     }
 
-    p.mouseMoved = () => {
-      console.log = `mouseX = ${p.mouseX} mouseY = ${p.mouseY}`;
-      console.log = "mouse moved";
-    }
+    // p.mouseMoved = () => {
+    //   console.log = `mouseX = ${p.mouseX} mouseY = ${p.mouseY}`;
+    //   console.log = "mouse moved";
+    // }
 
     // p.mouseClicked = () => {
     //   if (p.mouseX < 520 && p.mouseY < 520){
@@ -146,13 +148,24 @@ class P5Gan extends React.Component {
       if (p.mouseX < 520 && p.mouseY < 520){
         let map1 = p.map(p.mouseY, 0, imgSize, 1, -1);
 
-        //  a.fill(map1, 0);
+        // //  a.fill(map1, 0);
+        // for (let i = 0; i < imgSize; i++) {
+        // a[i] = 2 * p.noise(map1 * i) - 1;
+        // }
+        // p.getServerState();
+        // p.generateImage(a);
+        p.updateGan(map1);
+      }
+    }
+
+    p.updateGan = (intVal) => {
+      //  a.fill(map1, 0);
         for (let i = 0; i < imgSize; i++) {
-        a[i] = 2 * p.noise(map1 * i) - 1;
+        a[i] = 2 * p.noise(intVal * i) - 1;
         }
         p.getServerState();
         p.generateImage(a);
-      }
+
     }
 
 

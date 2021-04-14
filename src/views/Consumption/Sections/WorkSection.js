@@ -28,7 +28,7 @@ const useStyles = makeStyles(styles);
 export default function WorkSection() {
  const classes = useStyles();
 
-  const { value:travel, bind:bindTravel, reset:resetTravel } = useInput('');
+  const { value:travel, bind:bindTravel, reset:resetTravel} = useInput('');
   const { value:purchase, bind:bindPurchase, reset:resetPurchase } = useInput('');
   const [selectedMode, setSelectedModeValue] = useState(0);
   const [selectedDiet, setSelectedDietValue] = useState(0);
@@ -40,17 +40,28 @@ export default function WorkSection() {
     setP5State('show')
   }
 
+  const clearTravel = () =>{
+    if(co2Calc){setP5State('hide')}
+  }
+
+  const clearPurchase= () =>{
+    if(co2Calc){setP5State('hide')}
+  }
+
   // handle onChange event of the dropdown
   const handleModeChange = e => {
     setSelectedModeValue(e.value);
+    if(co2Calc){setP5State('hide')}
   }
 
    const handleDietChange = e => {
     setSelectedDietValue(e.value);
+    if(co2Calc){setP5State('hide')}
   }
 
    const handleWasteChange = e => {
-    setSelectedWasteValue(e.value);
+    setSelectedWasteValue(e.value)
+    if(co2Calc){setP5State('hide')}
   }
   
 
@@ -62,15 +73,15 @@ export default function WorkSection() {
 
     if(selectedMode) {
        if(selectedMode == "drive"){
-          console.log(`your travel mode was ${selectedMode} ≈ 440 grams CO2e / mile `);
+          // console.log(`your travel mode was ${selectedMode} ≈ 440 grams CO2e / mile `);
           travelVal = 440;
         };
        if(selectedMode == "walk") {
-          console.log(`your travel mode was ${selectedMode} ≈ 39 grams CO2e / mile`);
+          // console.log(`your travel mode was ${selectedMode} ≈ 39 grams CO2e / mile`);
          travelVal = 39;
         };
        if(selectedMode == "transit") {
-          console.log(`your travel mode was ${selectedMode} ≈ 99 grams CO2e / mile`);
+          // console.log(`your travel mode was ${selectedMode} ≈ 99 grams CO2e / mile`);
          travelVal = 99;
         };
    
@@ -78,19 +89,19 @@ export default function WorkSection() {
 
     if(selectedDiet) {
        if(selectedDiet == "meat"){
-          console.log(`your diet was ${selectedDiet} ≈ 8.20kg CO2e`);
+          // console.log(`your diet was ${selectedDiet} ≈ 8.20kg CO2e`);
           dietVal = 8.2;
         };
        if(selectedDiet == "noRed") {
-          console.log(`your diet was ${selectedDiet} ≈ 6.21kg CO2e`);
+          // console.log(`your diet was ${selectedDiet} ≈ 6.21kg CO2e`);
          dietVal = 6.21;
         };
        if(selectedDiet == "vegetarian") {
-          console.log(`your diet was ${selectedDiet} ≈ 4.22kg CO2e`);
+          // console.log(`your diet was ${selectedDiet} ≈ 4.22kg CO2e`);
          dietVal = 4.22;
         };
        if(selectedDiet == "vegan") {
-          console.log(`your diet was ${selectedDiet} ≈ 3.72kg CO2e`);
+          // console.log(`your diet was ${selectedDiet} ≈ 3.72kg CO2e`);
          dietVal = 3.72;
         }; 
    
@@ -98,27 +109,27 @@ export default function WorkSection() {
 
     if(selectedWaste) {
        if(selectedWaste == "garbage"){
-          console.log(`your waste mode was 1 bag of garbage ≈ 10kg CO2e / per `);
+          // console.log(`your waste mode was 1 bag of garbage ≈ 10kg CO2e / per `);
           wasteVal = 10;
         };
        if(selectedWaste == "recycle") {
-          console.log(`your waste mode was 1 bag if recycling ≈ 7kgs CO2e / per`);
+          // console.log(`your waste mode was 1 bag if recycling ≈ 7kgs CO2e / per`);
          wasteVal = 7;
         };
        if(selectedWaste == "boxes") {
-          console.log(`your waste mode was boxes ≈ 5 grams CO2e / mile`);
+          // console.log(`your waste mode was boxes ≈ 5 grams CO2e / mile`);
          wasteVal = 5;
         };
        if(selectedWaste == "compost") {
-          console.log(`your waste mode was compost ≈ 2.5kg CO2e`);
+          // console.log(`your waste mode was compost ≈ 2.5kg CO2e`);
          wasteVal = 2.5;
         };
        if(selectedWaste == "more") {
-          console.log(`your waste mode was more ≈ 17 CO2e`);
+          // console.log(`your waste mode was more ≈ 17 CO2e`);
          wasteVal = 17;
         };
        if(selectedWaste == "none") {
-          console.log(`your waste mode was none ≈ 0 CO2e`);
+          // console.log(`your waste mode was none ≈ 0 CO2e`);
          wasteVal = 0;
         }; 
 
@@ -187,7 +198,7 @@ export default function WorkSection() {
       
       <label>
         Did you travel/commute? How many miles? <br />
-        <input className={classes.textInput} type="text" {...bindTravel} />
+        <input className={classes.textInput} type="text" {...bindTravel} onFocus={clearTravel}/>
       </label><br />
        <label>
         How did you travel?<br />
@@ -195,7 +206,7 @@ export default function WorkSection() {
       </label><br />
       <label>
         Purchase? How much do you spend daily on average?<br />
-        <input className={classes.textInput} type="text" {...bindPurchase} />
+        <input className={classes.textInput} type="text" {...bindPurchase} onFocus={clearPurchase}/>
       </label><br />
       <label>
         What is your typical diet?
@@ -210,14 +221,16 @@ export default function WorkSection() {
       {/* <Button color="primary" type="submit" value="Submit">Generate Your Futurescape GAN?</Button>  */}
     </form>
       <br />
+      {(co2Calc) ?  
       <div>
+       
       {p5State === 'hide' && (
         <ShowP5Button setP5State={triggerShowP5} val="Show Your FutureScape GAN"/>
       )}
 
       {p5State === 'show' && <P5Gan em={co2Calc}/>}
        </div>
-        
+       : <div></div> }
 
         {/* <P5Test/> */}
         </GridItem>
