@@ -184,8 +184,8 @@ export default function WorkSection() {
         <GridItem cs={12} sm={12} md={8}>
        
      <div className={classes.stats}>
-            <h2 className={classes.title}>Avg Per Capita CO2 Emissions in the US <br/>are ≈ 16.8 metric tons</h2>
-            <h2 className={classes.title}>By 2030 this needs to be 2.5mt <br/> By 2050 this needs to drop to 1.5mt</h2>
+            <h2 className={classes.title}>Avg Per Capita CO2 Emissions in the US <br/>are ≈ 16.2 metric tons</h2>
+            <h2 className={classes.title}>By 2030 this needs to be 3.3mt <br/> By 2050 this needs to drop to 1.5mt</h2>
           </div>
           <h2 className={classes.title}>What are your emissions?</h2>
           <h4 className={classes.description}>
