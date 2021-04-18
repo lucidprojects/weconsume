@@ -14,6 +14,8 @@ import GridItem from "components/Grid/GridItem.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
 import Parallax from "components/Parallax/Parallax.js";
 
+import ProductSection from "./Sections/ProductSection.js";
+
 // import styles from "assets/jss/material-kit-react/views/profilePage.js";
 import styles from "assets/jss/material-kit-react/views/components.js";
 
@@ -52,7 +54,7 @@ export default function MlEd(props) {
               <div className={classes.brand}>
               <h1 className={classes.title}>Machine Learning</h1>
               <h4>
-                Privacy Preserving Machine Learning Set to revolutionize Privacy while allowing for shared learning.
+                Privacy-Preserving Machine Learning Set to revolutionize Privacy while allowing for shared learning.
               </h4>
               </div>
               
@@ -65,8 +67,8 @@ export default function MlEd(props) {
       </Parallax>
      <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
-          {/* <ProductSection />
-          <TeamSection /> */}
+          <ProductSection />
+          {/* <TeamSection /> */}
           {/* <WorkSection /> */}
         </div>
       </div>

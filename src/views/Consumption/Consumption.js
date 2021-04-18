@@ -65,8 +65,9 @@ export default function Consumption(props) {
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
           {/* <ProductSection />
-          <TeamSection /> */}
+          */}
           <WorkSection classes={classes}/>
+          <TeamSection /> 
           {/* <MyForm /> */}
         </div>
       </div>

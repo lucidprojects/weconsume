@@ -50,7 +50,7 @@ export default function Whatyoucando(props) {
               <div className={classes.brand}>
               <h1 className={classes.title}>You Can Make a Difference.</h1>
               <h4>
-                The idea of one's own impact and ability to drive real change can often be discouraging.  But your actions matter.
+                The idea of one's impact and ability to drive real change can often be discouraging.  But your actions matter.
               </h4>
               <br />
               </div>
@@ -61,7 +61,7 @@ export default function Whatyoucando(props) {
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
           <ProductSection />
-          
+          <WorkSection />
         </div>
       </div>
       <Footer />

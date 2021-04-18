@@ -61,8 +61,7 @@ export default function About(props) {
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
           <ProductSection />
-          
-          <WorkSection />
+          {/* <WorkSection /> */}
         </div>
       </div>
       <Footer />

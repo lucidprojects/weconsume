@@ -24,10 +24,7 @@ export default function ProductSection() {
           <h2>“The utility of the exchanges made possible by Bitcoin will far exceed the cost of electricity used. Therefore, not having Bitcoin is a net waste,”</h2> Satoshi Nakamoto BitcoinTalk.org, c. 2010.
           <h2 className={classes.title}>Bitcoin</h2>
           <h5 className={classes.description}>
-            Bitcoin and the underlying blockchain technology have tremendous potential to help drive climate action.  Often criticized for its power consumption, the potential it brings and comparisons to energy from other sectors shows this is a misconception.
-
-
-            
+           Bitcoin and the underlying blockchain technology have tremendous potential to help drive climate action. Often criticized for its power consumption, its potential, and comparisons to energy from other sectors show this is a misconception.
           </h5>
         </GridItem>
       </GridContainer>

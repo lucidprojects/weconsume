@@ -26,7 +26,7 @@ export default function ProductSection() {
         <GridItem xs={12} sm={12} md={8}>
           <h2 className={classes.title}>Let{"'"}s talk about Change</h2>
           <h5 className={classes.description}>
-            Through out this project one thing has become more and more evident, drastic change is needed and soon.  But how do we as individuals make a diference?
+            One thing has become more and more evident throughout this project, drastic change is needed and soon. But how do we as individuals make a difference?
           </h5>
         </GridItem>
       </GridContainer>

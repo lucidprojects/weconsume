@@ -21,7 +21,6 @@ import ReactPlayer from "react-player";
 import styles from "assets/jss/material-kit-react/views/components.js";
 
 
-
 // Sections for this page
 import ProductSection from "./Sections/ProductSection.js";
 import TeamSection from "./Sections/TeamSection.js";
@@ -84,8 +83,7 @@ export default function BitcoinEd(props) {
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
           <ProductSection />
-          {/* <TeamSection />
-          <WorkSection /> */}
+          <WorkSection /> 
         </div>
       </div>
       <Footer />

@@ -71,9 +71,9 @@ export default function CoTwoInfo2({ name }) {
 		{/* <div> <h4>where am I?</h4></div>
 		<div>{rows} or {myCo2eV}</div> */}
 		<div>
-			<h3>The Weconsu.me project is an exploration of consumption, emerging technologies, and what motivates us to be conscious consumers. An exercise in quantified self and an attempt to invoke introspection into one's own consumption patterns.</h3>
-			<h3>Over the last half century we've made some poor decisions. In order to correct course drastic sacrifices are required.</h3>
-			<h3>I've set myself a goal of 4.5mt of CO2e annually.  Can I meet it? The animation below will be a daily reminder of how I'm doing. Learn more on the <Link to="/consumption">consumption</Link> page and explore my daily consumption patterns on the <HashLink to="#inputs">consumption ledger</HashLink> below.</h3>
+			<h3>The Weconsu.me project explores consumption, emerging technologies, and what motivates us to be conscious consumers. An exercise in quantified self and an attempt to invoke introspection into one's consumption patterns.</h3>
+ <h3>Over the last half-century, we've made some poor decisions. To correct course drastic sacrifices are required.</h3>
+ <h3>I've set myself a goal of 4.5mt of CO2e annually. Can I meet it? The animation below will be a daily reminder of how I'm doing. Learn more on the <Link to="/consumption">consumption</Link> page and explore my daily consumption patterns on the <HashLink to="#inputs">consumption ledger</HashLink> below.</h3>
 		</div>
 		{/* <div>
 			{(myCo2eV >= co2Thresh) ? rows + ` greater than ${co2Thresh}` : rows + ` less than ${co2Thresh}`}
