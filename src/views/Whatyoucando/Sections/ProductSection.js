@@ -35,7 +35,7 @@ export default function ProductSection() {
           <GridItem xs={12} sm={12} md={4}>
             <InfoArea
               title="Change Your Patterns"
-              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
+              description=""
               icon={NatureIcon}
               iconColor="success"
               vertical
@@ -44,7 +44,7 @@ export default function ProductSection() {
           <GridItem xs={12} sm={12} md={4}>
             <InfoArea
               title="Get Involved"
-              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
+              description=""
               icon={AccountBalanceIcon}
               iconColor="info"
               vertical
@@ -53,7 +53,7 @@ export default function ProductSection() {
           <GridItem xs={12} sm={12} md={4}>
             <InfoArea
               title="Talk about it"
-              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
+              description=""
               icon={Chat}
               iconColor="danger"
               vertical
