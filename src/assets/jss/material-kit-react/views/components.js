@@ -42,7 +42,7 @@ const componentsStyle = {
     textAlign: "center",
   },
   description: {
-    color: "#777777",
+    color: "#555555",
     overflow: "hidden",
     marginTop: "0px",
     fontSize: "19px",
