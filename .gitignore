@@ -73,3 +73,6 @@ logs
 
 # dotenv environment variables file
 **.env
+
+# ignore build
+build/
