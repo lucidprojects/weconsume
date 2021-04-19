@@ -18,8 +18,7 @@ import styles from "assets/jss/material-kit-react/views/components.js";
 //import styles from "assets/jss/material-kit-react/views/landingPage.js";
 
 // Sections for this page
-import ProductSection from "./Sections/ProductSection.js";
-import WorkSection from "./Sections/WorkSection.js";
+import AboutSection from "./Sections/AboutSection.js";
 
 const dashboardRoutes = [];
 
@@ -60,8 +59,7 @@ export default function About(props) {
       </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
-          <ProductSection />
-          {/* <WorkSection /> */}
+          <AboutSection />
         </div>
       </div>
       <Footer />

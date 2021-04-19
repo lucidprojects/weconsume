@@ -14,12 +14,8 @@ import GridItem from "components/Grid/GridItem.js";
 import Parallax from "components/Parallax/Parallax.js";
 // sections for this page
 import HeaderLinks from "components/Header/HeaderLinks.js";
-import SectionBasics from "./Sections/SectionBasics.js";
-import Papa from 'papaparse';
+import BlockchainSection from "./Sections/BlockchainSection.js";
 
-
-// papaparse csv test
-import BlkTxs from "components/Blkdata/Blkdata.js";
 import Papaparse from "components/Papaparse/Papaparse.js";
 
 import ReactPlayer from "react-player";
@@ -85,7 +81,7 @@ export default function Components(props) {
       </Parallax>
 
       <div className={classNames(classes.main, classes.mainRaised)}>
-        <SectionBasics />
+        <BlockchainSection />
       </div>
       <Footer />
     </div>

@@ -22,7 +22,7 @@ class P5Gan extends React.Component {
 
   Sketch = (p) => {
 
-    let outputImage, saveImage;
+    let outputImage;
     const imgSize = 512; //our image will be 512x512 pixels, which is what StyleGAN requires
     let bWaiting = false;
     let serverState = "";
@@ -46,7 +46,7 @@ class P5Gan extends React.Component {
     }
 
     p.draw = () => {
-      if(p.frameCount%30 == 0)
+      if(p.frameCount%30 === 0)
         {
           p.getServerState();
         }
@@ -57,8 +57,8 @@ class P5Gan extends React.Component {
       p.noStroke();
       p.fill(150);
 
-      let txt = "Waiting for response: " + ((bWaiting===true)?"YES":"NO");
-      txt += (serverState == "running") ? "\nServer state: " + serverState : "\nServer state: " + serverState + " - Please wait, startup can take a minute or more. ";
+      let txt = "Waiting for response: " + ((bWaiting === true)?"YES":"NO");
+      txt += (serverState === "running") ? "\nServer state: " + serverState : "\nServer state: " + serverState + " - Please wait, startup can take a minute or more. ";
       txt += "\n\nInitial image generated based on your daily CO2e. Click on image to change and explore.";
       
       p.text(txt, 10, 10);
@@ -126,40 +126,16 @@ class P5Gan extends React.Component {
        
     }
 
-    // p.mouseMoved = () => {
-    //   console.log = `mouseX = ${p.mouseX} mouseY = ${p.mouseY}`;
-    //   console.log = "mouse moved";
-    // }
-
-    // p.mouseClicked = () => {
-    //   if (p.mouseX < 520 && p.mouseY < 520){
-    //     let map1 = p.map(p.mouseY, 0, imgSize, 1, -1);
-
-    //     //  a.fill(map1, 0);
-    //     for (let i = 0; i < imgSize; i++) {
-    //     a[i] = 2 * p.noise(map1 * i) - 1;
-    //     }
-    //     p.getServerState();
-    //     p.generateImage(a);
-    //   }
-    // }
-
+    
     p.ganClick = () => {
       if (p.mouseX < 520 && p.mouseY < 520){
         let map1 = p.map(p.mouseY, 0, imgSize, 1, -1);
 
-        // //  a.fill(map1, 0);
-        // for (let i = 0; i < imgSize; i++) {
-        // a[i] = 2 * p.noise(map1 * i) - 1;
-        // }
-        // p.getServerState();
-        // p.generateImage(a);
         p.updateGan(map1);
       }
     }
 
     p.updateGan = (intVal) => {
-      //  a.fill(map1, 0);
         for (let i = 0; i < imgSize; i++) {
         a[i] = 2 * p.noise(intVal * i) - 1;
         }

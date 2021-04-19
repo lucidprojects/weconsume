@@ -1,7 +1,5 @@
 /*eslint-disable*/
 import React from "react";
-import DeleteIcon from "@material-ui/icons/Delete";
-import IconButton from "@material-ui/core/IconButton";
 // react components for routing our app without refresh
 import { Link } from "react-router-dom";
 
@@ -23,10 +21,6 @@ import Papaparse from "components/Papaparse/Papaparse.js";
 
 import styles from "assets/jss/material-kit-react/components/headerLinksStyle.js";
 
-// video components
-// import 'node_modules/video-react/dist/video-react.css'; // import css
-// import Player from "src/components/Video/Video"; // import css
-
 const useStyles = makeStyles(styles);
 
 export default function HeaderLinks(props) {
@@ -40,7 +34,6 @@ export default function HeaderLinks(props) {
           className={classes.navLink}
         >
           <Papaparse/>
-          {/* <CloudDownload className={classes.icons} /> CO2e | Daily Avg: 11kg  Annual Avg: 4.5t */}
           <i className={classes.socialIcons + " fas fa-globe-africa"} /> CO2e | Daily Avg: <span id="dailyavg"></span>kg | Annual Avg: <span id="annualavg"></span>t
           
         </Button>
@@ -91,23 +84,7 @@ export default function HeaderLinks(props) {
           </Button>
         </Tooltip>
       </ListItem>
-      {/* <ListItem className={classes.listItem}>
-        <Tooltip
-          id="instagram-facebook"
-          title="Follow us on facebook"
-          placement={window.innerWidth > 959 ? "top" : "left"}
-          classes={{ tooltip: classes.tooltip }}
-        >
-          <Button
-            color="transparent"
-            href="https://www.facebook.com/CreativeTim?ref=creativetim"
-            target="_blank"
-            className={classes.navLink}
-          >
-            <i className={classes.socialIcons + " fab fa-facebook"} />
-          </Button>
-        </Tooltip>
-      </ListItem> */}
+     
       <ListItem className={classes.listItem}>
         <Tooltip
           id="instagram-tooltip"

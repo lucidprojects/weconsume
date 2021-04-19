@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { createBrowserHistory } from "history";
-import { Router, BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import "assets/scss/material-kit-react.scss?v=1.9.0";
 
@@ -15,7 +15,6 @@ import About from "views/About/About.js";
 
 
 var hist = createBrowserHistory();
-let co2eDVar;
 
 ReactDOM.render(
   // <Router history={hist}>

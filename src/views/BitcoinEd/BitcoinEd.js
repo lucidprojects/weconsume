@@ -11,7 +11,6 @@ import Header from "components/Header/Header.js";
 import Footer from "components/Footer/Footer.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
-import Button from "components/CustomButtons/Button.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
 import Parallax from "components/Parallax/Parallax.js";
 
@@ -22,9 +21,8 @@ import styles from "assets/jss/material-kit-react/views/components.js";
 
 
 // Sections for this page
-import ProductSection from "./Sections/ProductSection.js";
-import TeamSection from "./Sections/TeamSection.js";
-import WorkSection from "./Sections/WorkSection.js";
+import BitcoinSection from "./Sections/BitcoinSection.js";
+import DetailsSection from "./Sections/DetailsSection.js";
 
 const dashboardRoutes = [];
 
@@ -82,8 +80,8 @@ export default function BitcoinEd(props) {
       </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
-          <ProductSection />
-          <WorkSection /> 
+          <BitcoinSection />
+          <DetailsSection /> 
         </div>
       </div>
       <Footer />

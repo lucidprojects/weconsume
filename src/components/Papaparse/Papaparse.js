@@ -1,12 +1,12 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
+// import React, {useState, useEffect} from "react";
 import Papa from 'papaparse';
 
 const MYSHEET = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQLNYCe1yagGCePlBPasi2bjAGc3X4cPIeAxJPpegHjCdnJ7bRBRLZkqbSGvWyymACFbiABvhzzwRzK/pub?gid=871249801&single=true&output=csv";
 
-let ganVid;
-let myGan;
+
 let co2eD;
-let co2eDVar;
+
 
 const ShowInfo = (props) => {
   
@@ -24,13 +24,6 @@ const ShowInfo = (props) => {
 
 
 }
-
-// const [renderShowInfo, updateShowInfo] = useState(new Date()); // default value can be anything you want
-
-//   useEffect(() => {
-//     setTimeout(() => updateShowInfo(new Date(), console.log("here")), 5000);
-//   }, [renderShowInfo]);
-
 
 class Papaparse extends React.Component {
   constructor(props) {

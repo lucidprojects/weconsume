@@ -11,19 +11,15 @@ import Header from "components/Header/Header.js";
 import Footer from "components/Footer/Footer.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
-import Button from "components/CustomButtons/Button.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
 import Parallax from "components/Parallax/Parallax.js";
 
-// import styles from "assets/jss/material-kit-react/views/landingPage.js";
 import styles from "assets/jss/material-kit-react/views/components.js";
 
 
 // Sections for this page
-import ProductSection from "./Sections/ProductSection.js";
-import TeamSection from "./Sections/TeamSection.js";
-import WorkSection from "./Sections/WorkSection.js";
-import MyForm from "./Sections/WorkSection.js";
+import ConsumptionForm from "./Sections/ConsumptionForm.js";
+import MethodolgySection from "./Sections/MethodolgySection.js";
 
 const dashboardRoutes = [];
 
@@ -47,7 +43,6 @@ export default function Consumption(props) {
         {...rest}
       />
       <Parallax filter image={require("assets/img/meters_sml.jpg")} altName={"Photo by Jon Moore on Unsplash"}>
-      {/* <Parallax filter image={require("assets/img/volts.jpg")} altName={"Photo by Thomas Kelley on Unsplash"}> */}
         <div className={classes.container}>
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
@@ -66,8 +61,8 @@ export default function Consumption(props) {
         <div className={classes.container}>
           {/* <ProductSection />
           */}
-          <WorkSection classes={classes}/>
-          <TeamSection /> 
+          <ConsumptionForm classes={classes}/>
+          <MethodolgySection /> 
           {/* <MyForm /> */}
         </div>
       </div>

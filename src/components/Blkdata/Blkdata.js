@@ -37,8 +37,8 @@ class BlkTxs extends React.Component {
           
           
           if (blktxmsg.match(/[/]/)) {
-            if(blktxmsg.match(/\"/)) {
-              blktxmsg = blktxmsg.replace(/\"/, '');
+            if(blktxmsg.match(/"/)) {
+              blktxmsg = blktxmsg.replace(/"/, '');
             }
             
             let divblk = createNode("div");

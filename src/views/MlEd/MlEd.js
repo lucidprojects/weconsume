@@ -14,9 +14,8 @@ import GridItem from "components/Grid/GridItem.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
 import Parallax from "components/Parallax/Parallax.js";
 
-import ProductSection from "./Sections/ProductSection.js";
+import MLSection from "./Sections/MLSection.js";
 
-// import styles from "assets/jss/material-kit-react/views/profilePage.js";
 import styles from "assets/jss/material-kit-react/views/components.js";
 
 const dashboardRoutes = [];
@@ -26,12 +25,7 @@ const useStyles = makeStyles(styles);
 export default function MlEd(props) {
   const classes = useStyles();
   const { ...rest } = props;
-  const imageClasses = classNames(
-    classes.imgRaised,
-    classes.imgRoundedCircle,
-    classes.imgFluid
-  );
-  const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
+  
   return (
     <div>
       <Header
@@ -67,9 +61,7 @@ export default function MlEd(props) {
       </Parallax>
      <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
-          <ProductSection />
-          {/* <TeamSection /> */}
-          {/* <WorkSection /> */}
+          <MLSection />
         </div>
       </div>
       <Footer />
