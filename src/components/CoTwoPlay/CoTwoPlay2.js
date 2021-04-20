@@ -5,6 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Papa from "papaparse";
 import ReactPlayer from "react-player";
 import styles from "assets/jss/material-kit-react/views/components.js";
+import Calculating from "components/LoadingText/LoadingText.js";
 
 const useStyles = makeStyles(styles);
 
@@ -85,8 +86,11 @@ export default function CoTwoInfo2({ name }) {
 			height="auto"
 			/>
 		) : (
-			<h3>Calculating potential future...</h3>
+			<h3><Calculating /></h3>
+			
 		)}
+		
+		
 		</div>
 	);
 }
