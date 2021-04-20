@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
@@ -10,15 +10,55 @@ import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 
 import Select from 'react-select';
-import P5Gan from 'components/P5Test/P5gan'
+// import P5Gan from 'components/P5Test/P5gan'
+import P5Gan from 'components/P5Test/P5gan_WindowWidth'
 import ShowP5Button from 'components/P5Test/ShowP5'
 
 import styles from "assets/jss/material-kit-react/views/landingPageSections/workStyle.js";
 
 import { useInput } from 'components/InputHook/InputHook';
 
-let co2Calc, annualCo2;
+let co2Calc, annualCo2, winWidth;
 const useStyles = makeStyles(styles);
+
+function getWindowDimensions() {
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    width,
+    height
+  };
+}
+
+function useWindowDimensions() {
+  const [windowDimensions, setWindowDimensions] = useState(
+    getWindowDimensions()
+  );
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return windowDimensions;
+}
+
+const WindowDims = () => {
+  const { height, width } = useWindowDimensions();
+  winWidth = width;
+  return (
+    
+    <div>
+      width: {width} ~ height: {height}
+    </div>
+  );
+};
+
+
+
 
 export default function ConsumptionForm() {
  const classes = useStyles();
@@ -79,6 +119,14 @@ export default function ConsumptionForm() {
           // console.log(`your travel mode was ${selectedMode} ≈ 99 grams CO2e / mile`);
          travelVal = 99;
         };
+       if(selectedMode === "bike") {
+          // console.log(`your travel mode was ${selectedMode} ≈ 99 grams CO2e / mile`);
+         travelVal = 29.4;
+        };
+       if(selectedMode === "fly") {
+          // console.log(`your travel mode was ${selectedMode} ≈ 99 grams CO2e / mile`);
+         travelVal = 24040;
+        };
    
     } 
 
@@ -134,9 +182,11 @@ export default function ConsumptionForm() {
     let mkCalc = parseInt(travel) * parseInt(purchase);
     co2Calc = parseFloat(travel) * (travelVal / 1000) + parseFloat(purchase) * purchaseVal + dietVal + wasteVal;
     co2Calc = co2Calc.toFixed(2);
+    let tCo2 = parseFloat(travel) * (travelVal / 1000)
+    let pCo2 = parseFloat(purchase) * purchaseVal;
     annualCo2 = (co2Calc * 365) / 1000;
     annualCo2 = annualCo2.toFixed(2);
-    if(selectedMode !== '') return`≈ ${co2Calc}kg = ${travel} emissions ${travelVal / 1000}kg + purchase * ${purchaseVal}kg + diet ${dietVal}kg + waste ${wasteVal}kg `;
+    if(selectedMode !== '') return`≈ ${co2Calc}kg = travel emissions = ${tCo2}kg + purchase emissions ${pCo2}kg + diet emissions ${dietVal}kg + waste emissions ${wasteVal}kg `;
     else return`${mkCalc} = ${travel} * ${purchase}  was !number, but is now`;
     
   } 
@@ -146,9 +196,12 @@ export default function ConsumptionForm() {
   if(travel && purchase && selectedMode && selectedDiet && selectedWaste) myVal = updateMyVal(travel, purchase, selectedMode, selectedDiet, selectedWaste);
 
   const modeOptions = [
-      { value: 'walk', label: 'walk' },
+      { value: 'fly', label: 'fly' },
       { value: 'drive', label: 'drive' },
-      { value: 'transit', label: 'transit' }
+      { value: 'transit', label: 'transit' },
+      { value: 'walk', label: 'walk' },
+      { value: 'bike', label: 'bike' }
+      
   ]
   const dietOptions = [
       { value: 'meat', label: 'meat' },
@@ -157,11 +210,11 @@ export default function ConsumptionForm() {
       { value: 'vegan', label: 'vegan' }
   ]
   const wasteOptions = [
+      { value: 'more', label: 'more' },
       { value: 'garbage', label: '1 bag of garbage' },
       { value: 'recycle', label: '1 bag if recycling' },
       { value: 'boxes', label: 'boxes' },
       { value: 'compost', label: 'compost' },
-      { value: 'more', label: 'more' },
       { value: 'none', label: 'none' }
   ]
 
@@ -208,6 +261,8 @@ export default function ConsumptionForm() {
       {/* <Button color="primary" type="submit" value="Submit">Generate Your Futurescape GAN?</Button>  */}
     </form>
       <br />
+      <WindowDims />
+      <br />
       {(co2Calc) ?  
       <div>
        
@@ -215,7 +270,7 @@ export default function ConsumptionForm() {
         <ShowP5Button setP5State={triggerShowP5} val="Show Your FutureScape GAN"/>
       )}
 
-      {p5State === 'show' && <P5Gan em={co2Calc}/>}
+      {p5State === 'show' && <P5Gan em={co2Calc} width={winWidth}/>}
        </div>
        : <div></div> }
 

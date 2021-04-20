@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import p5 from 'p5';
 
 
@@ -7,6 +7,9 @@ Based off of code from Roy MacDonald's GAN mixing console
 https://medium.com/runwayml/stylegan-mixing-console-3046a63336de
 https://github.com/roymacdonald/roymacdonald.github.io/blob/master/stylegan-transition.js
 */
+
+
+
 
 class P5Gan extends React.Component {
   constructor(props) {
@@ -22,6 +25,19 @@ class P5Gan extends React.Component {
       this.fetchUrl = "volcanogan-9fbeaed1";
       this.fetchKey = "pBKNXuNSgN1fhZZNw0GSJA==";
     }
+    if(this.props.width > 600){
+      console.log(this.props.width);
+      this.canvasWidth = 550;
+      this.canvasHeight = 700;
+      this.imgSize = 512;
+      this.imgYPos = 80;
+    } else {
+      console.log(this.props.width);
+      this.canvasWidth = 225;
+      this.canvasHeight = 315;
+      this.imgSize = 200;
+      this.imgYPos = 110;
+    }
 
   }
 
@@ -30,16 +46,19 @@ class P5Gan extends React.Component {
   Sketch = (p) => {
 
     let outputImage;
-    const imgSize = 512; //our image will be 512x512 pixels, which is what StyleGAN requires
+    // const imgSize = 512; //our image will be 512x512 pixels, which is what StyleGAN requires
+    let imgSize = this.imgSize; //our image will be 512x512 pixels, which is what StyleGAN requires
     let bWaiting = false;
     let serverState = "";
     let a = new Array(512);
+    // let a = new Array(this.imgSize);
     let ganCanvas;
     a.fill(0.0, 0);
 
 
     p.setup = () => {
-        ganCanvas = p.createCanvas(550, 700);
+        ganCanvas = p.createCanvas(this.canvasWidth, this.canvasHeight);
+        // ganCanvas = p.createCanvas(550, 700);
         //ganCanvas = p.createCanvas(p.windowWidth, p.windowHeight);
         ganCanvas.mouseClicked(p.ganClick);
         p.getServerState();
@@ -53,7 +72,7 @@ class P5Gan extends React.Component {
         outputImage.hide();
     }
 
-    p.windowResized = () => { p.resizeCanvas(p.windowWidth, p.windowHeight); }
+    // p.windowResized = () => { p.resizeCanvas(p.windowWidth, p.windowHeight); }
 
     p.draw = () => {
       if(p.frameCount%30 === 0)
@@ -62,7 +81,8 @@ class P5Gan extends React.Component {
         }
       
       p.background(255);
-      p.image(outputImage, 0, 80, 512, 512);
+
+      p.image(outputImage, 0, this.imgYPos, this.imgSize, this.imgSize);
       
       p.noStroke();
       p.fill(150);
@@ -71,7 +91,7 @@ class P5Gan extends React.Component {
       txt += (serverState === "running") ? "\nServer state: " + serverState : "\nServer state: " + serverState + " - Please wait, startup can take a minute or more. ";
       txt += "\n\nInitial image generated based on your daily CO2e. Click on image to change and explore.";
       
-      p.text(txt, 10, 10);
+      p.text(txt, 0, 10, this.canvasWidth, this.canvasHeight);
       
     }
 
@@ -163,7 +183,7 @@ class P5Gan extends React.Component {
 
   render() {
     return (
-        <div ref={this.myRef}></div> 
+      <div ref={this.myRef}></div> 
     )
   }
 }

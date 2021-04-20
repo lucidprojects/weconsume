@@ -33,9 +33,12 @@ export default function HeaderLinks(props) {
           color="transparent"
           className={classes.navLink}
         >
-          <Papaparse/>
-          <i className={classes.socialIcons + " fas fa-globe-africa"} /> CO2e | Daily Avg: <span id="dailyavg"></span>kg | Annual Avg: <span id="annualavg"></span>t
           
+          <Papaparse/>
+          <i className={classes.socialIcons + " fas fa-globe-africa"} /> CO2e {window.innerWidth > 959 ? ' | Daily Avg:' : ' home'} <span id="dailyavg"></span>{window.innerWidth > 959 ? ' kg | Annual Avg:' : ''} <span id="annualavg"></span>{window.innerWidth > 959 ? 't' : ''} 
+          {/* <i className={classes.socialIcons + " fas fa-globe-africa"} /><div> CO2e | Daily Avg: <span id="dailyavg"></span>kg | </div> <div> Annual Avg: <span id="annualavg"></span>t</div> */}
+          {/* {window.innerWidth > 959 ? `<i className={classes.socialIcons + " fas fa-globe-africa"} /><div> CO2e | Daily Avg: <span id="dailyavg"></span>kg | </div> <div> Annual Avg: <span id="annualavg"></span>t</div>` : `<i className={classes.socialIcons + " fas fa-globe-africa"} /><div> CO2e </div>`} */}
+         
         </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
