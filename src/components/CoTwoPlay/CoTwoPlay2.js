@@ -35,8 +35,10 @@ const checkUpdate = () => {
   }
 };
 
-let co2Thresh = 11.28;
+let co2Thresh = 12.32;
 
+let ranVid = Math.floor(Math.random()*2) 
+console.log(`ranVid = ${ranVid}`);
 
 export default function CoTwoInfo2({ name }) {	
 	const classes = useStyles();
@@ -57,7 +59,7 @@ export default function CoTwoInfo2({ name }) {
 				prevVal = myCo2eV;
 			}
 		});
-		}, 5000);
+		}, 3000);
 	}, []);
 
 	return (
@@ -70,9 +72,14 @@ export default function CoTwoInfo2({ name }) {
 		</div>
 		
 		{(myCo2eV) ?
-		<h3>Futurescape GAN = a  {(myCo2eV > co2Thresh) ? `bleak future based on ${myCo2eV}kg above` : `more homogenous future based on ${myCo2eV}kg at or below`} a goal of 11.28kg daily emissions. </h3> : <span></span>}
+		<h3>Futurescape GAN =  {(myCo2eV > co2Thresh) ? 
+		ranVid === 1 ? `Over population, air pollution, smog, rising temperatures, and crumbling infrastructure paint a bleak future, based on ${myCo2eV}kg, above` : `Flooding, fires, droughts, and waste. The future of a warming planet, based on ${myCo2eV}kg, above` : 
+		ranVid === 1 ? `A more vibrate, symbiotic relationship between humans and the planet creates a homogenous future based on ${myCo2eV}kg, at or below` : `Climate change starts with equality. We need to come together to cherish each other and the planet. A more equitable future based on ${myCo2eV}kg, at or below` } the goal of 12.32kg daily emissions. </h3> : <span></span>}
+		{/* <h3>Futurescape GAN = a {(myCo2eV > co2Thresh) ? `bleak future based on ${myCo2eV}kg above` : `more homogenous future based on ${myCo2eV}kg at or below`} a goal of 12.32kg daily emissions. </h3> : <span></span>} */}
 		<div className="hide">
-			{myCo2eV > co2Thresh ? url = require("assets/video/apocogan_40s.mp4") : url = require("assets/video/waterfall.mp4")}{" "}
+			{(ranVid === 1) ?
+			myCo2eV > co2Thresh ? url = require("assets/video/smog1_noloop.mp4") : url = require("assets/video/waterfall.mp4") :
+			myCo2eV > co2Thresh ? url = require("assets/video/apocogan_40s.mp4") : url = require("assets/video/hands.mp4")}:{" "}
 		</div>
 		{myCo2eV ? (
 			<ReactPlayer

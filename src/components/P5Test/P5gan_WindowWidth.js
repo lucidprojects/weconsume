@@ -16,32 +16,40 @@ class P5Gan extends React.Component {
     super(props)
     this.myRef = React.createRef()
     this.state = { showP5: false }
-    if(this.props.em < 11.28){
+    if(this.props.em < 12.32){
       //console.log("lower than goal");
       this.fetchUrl = "waterfalgan-079231ad";
       this.fetchKey = "iJBWJJ3D0evaQ0r3HvUylA==";
+      this.ganText = "A more vibrate, symbiotic relationship between humans and the planet creates a homogenous future, based on daily emissions of ";
+      this.ganText += `${this.props.em}kg of CO2e.`
     } else {
       //console.log("higher than goal");
-      this.fetchUrl = "volcanogan-9fbeaed1";
-      this.fetchKey = "pBKNXuNSgN1fhZZNw0GSJA==";
+      // this.fetchUrl = "volcanogan-9fbeaed1";
+      // this.fetchKey = "pBKNXuNSgN1fhZZNw0GSJA==";
+      this.fetchUrl = "smog2-d823cf61";
+      this.fetchKey = "+3kuddGxcOhG3U6cmwmgfA==";
+      this.ganText = "Over population, air pollution, smog, rising temperatures, and crumbling infrastructure paint a bleak future, based on daily emissions of ";
+      this.ganText += `${this.props.em}kg of CO2e.`
     }
-    if(this.props.width > 600){
+    if(this.props.width > 600 || this.props.width == undefined){
       console.log(this.props.width);
       this.canvasWidth = 550;
       this.canvasHeight = 700;
       this.imgSize = 512;
-      this.imgYPos = 80;
+      this.imgYPos = 185;
+      this.ganTextYPos = 120;
     } else {
       console.log(this.props.width);
       this.canvasWidth = 225;
-      this.canvasHeight = 315;
+      this.canvasHeight = 515;
       this.imgSize = 200;
-      this.imgYPos = 110;
+      this.imgYPos = 270;
+      this.ganTextYPos = 140;
     }
 
   }
 
-  
+    
 
   Sketch = (p) => {
 
@@ -86,6 +94,7 @@ class P5Gan extends React.Component {
       
       p.noStroke();
       p.fill(150);
+      p.textSize(16);
 
       let txt = "Waiting for response: " + ((bWaiting === true)?"YES":"NO");
       txt += (serverState === "running") ? "\nServer state: " + serverState : "\nServer state: " + serverState + " - Please wait, startup can take a minute or more. ";
@@ -93,6 +102,13 @@ class P5Gan extends React.Component {
       
       p.text(txt, 0, 10, this.canvasWidth, this.canvasHeight);
       
+      let wtxt = "Calculating future...";
+      
+      
+      
+      p.text(this.ganText, 0, this.ganTextYPos, this.canvasWidth, this.canvasHeight);
+
+      // (bWaiting === true) ?  p.text(wtxt, 0, 70, this.canvasWidth, this.canvasHeight) : p.text(this.ganText, 0, this.canvasHeight + 10, this.canvasWidth, this.canvasHeight);
     }
 
     p.getServerState = () =>
@@ -148,6 +164,7 @@ class P5Gan extends React.Component {
           // console.log(outputs);
           outputImage.attribute("src", outputs.image);
           bWaiting = false;
+          
           
         })
       .catch(function(error) {

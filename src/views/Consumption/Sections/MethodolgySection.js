@@ -27,9 +27,9 @@ export default function MethodolgySection() {
             <h5 className={classes.description}>
 The currently available tools are lacking. Generic inputs and generic outputs give rough estimates at best. With that in mind, I've pulled from a few different sources in an attempt to make things more accurate. 
 <br /><br />
-Again, per capita, annual emissions in the US are ≈ 16.2 metric tons per adult. Which ultimately, by 2050, we need to drop to 1.5mt. For this project, I set myself the goal of 4.5mt annually, which equals 11.28kg daily.
+Again, per capita, annual emissions in the US are ≈ 16.2 metric tons per adult. Which ultimately, by 2050, we need to drop to 1.5mt. For this project, I set myself the goal of 4.5mt annually, which equals 12.32kg daily.
 <br /><br />
-Most of the calculations came from the <a href="https://www3.epa.gov/carbon-footprint-calculator/" target="_blank" rel="noopener noreferrer">EPA Carbon Footprint Calculator</a>. They allow you to download an Excel file containing the formulas used in their calculator.
+Most of the calculations came from the <a href="https://www3.epa.gov/carbon-footprint-calculator/" target="_blank" rel="noopener noreferrer">EPA Carbon Footprint Calculator</a>. They allow you to download an Excel file containing the formulas used in their calculations.
 <br /><br />
 The primary things I tracked were my travel, spending, utilities, diet, and waste, and I added later machine learning related emissions.
 <br /><br />

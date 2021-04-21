@@ -15,7 +15,7 @@ import styles from "assets/jss/material-kit-react/views/components.js";
 
 const useStyles = makeStyles(styles);
 
-let co2Thresh = 11.28;
+let co2Thresh = 12.32;
 
 
 export default function CoTwoInfo({ name }) {	

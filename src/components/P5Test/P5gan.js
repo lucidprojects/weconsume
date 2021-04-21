@@ -13,14 +13,16 @@ class P5Gan extends React.Component {
     super(props)
     this.myRef = React.createRef()
     this.state = { showP5: false }
-    if(this.props.em < 11.28){
+    if(this.props.em < 12.32){
       //console.log("lower than goal");
       this.fetchUrl = "waterfalgan-079231ad";
       this.fetchKey = "iJBWJJ3D0evaQ0r3HvUylA==";
     } else {
       //console.log("higher than goal");
-      this.fetchUrl = "volcanogan-9fbeaed1";
-      this.fetchKey = "pBKNXuNSgN1fhZZNw0GSJA==";
+      // this.fetchUrl = "volcanogan-9fbeaed1";
+      // this.fetchKey = "pBKNXuNSgN1fhZZNw0GSJA==";
+      this.fetchUrl = "smog2-d823cf61";
+      this.fetchKey = "+3kuddGxcOhG3U6cmwmgfA==";
     }
 
   }

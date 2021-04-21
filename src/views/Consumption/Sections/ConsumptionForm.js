@@ -52,7 +52,7 @@ const WindowDims = () => {
   return (
     
     <div>
-      width: {width} ~ height: {height}
+      {/* width: {width} ~ height: {height} */}
     </div>
   );
 };
@@ -260,9 +260,7 @@ export default function ConsumptionForm() {
      
       {/* <Button color="primary" type="submit" value="Submit">Generate Your Futurescape GAN?</Button>  */}
     </form>
-      <br />
       <WindowDims />
-      <br />
       {(co2Calc) ?  
       <div>
        
