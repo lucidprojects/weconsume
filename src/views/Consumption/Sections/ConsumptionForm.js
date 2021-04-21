@@ -127,6 +127,11 @@ export default function ConsumptionForm() {
           // console.log(`your travel mode was ${selectedMode} ≈ 99 grams CO2e / mile`);
          travelVal = 24040;
         };
+       if(selectedMode === "none") {
+          // console.log(`your travel mode was ${selectedMode} ≈ 99 grams CO2e / mile`);
+         travelVal = 0;
+        }; 
+
    
     } 
 
@@ -200,7 +205,8 @@ export default function ConsumptionForm() {
       { value: 'drive', label: 'drive' },
       { value: 'transit', label: 'transit' },
       { value: 'walk', label: 'walk' },
-      { value: 'bike', label: 'bike' }
+      { value: 'bike', label: 'bike' },
+      { value: 'none', label: 'none' }
       
   ]
   const dietOptions = [

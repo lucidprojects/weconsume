@@ -68,9 +68,14 @@ It's about ROI. Many of the consumers mentioned above use as much or more, and n
 
 <h3>Why Bitcoin reading:</h3>
  <h5 className={classes.description}>
+
+The Bullish Case for Bitcoin. <br/>
+<a href="https://vijayboyapati.medium.com/the-bullish-case-for-bitcoin-6ecc8bdecc1" target="_blank" rel="noopener noreferrer">Medium.com Vijay Boyapati 2018</a>
+<br /><br />
+
 "Bitcoin is a quiet protest.<br />
 It's the idea that inequality is bad. It's the idea that money created out of thin air and handed to a small few to inflate the stock market that is fundamentally wrong. It's the idea homes shouldn't cost a lifetime worth of hours stuck in a cubicle. It's the idea you should be able to send money anywhere in the world within a few minutes." <br/>
-<a href="https://medium.com/the-ascent/bitcoin-hitting-100-000-doesnt-matter-many-people-have-missed-the-point-b6360bed7b06" target="_blank" rel="noopener noreferrer">Medium.com Tim Denning</a>
+<a href="https://medium.com/the-ascent/bitcoin-hitting-100-000-doesnt-matter-many-people-have-missed-the-point-b6360bed7b06" target="_blank" rel="noopener noreferrer">Medium.com Tim Denning 2021</a>
 <br /><br />
 
 "The most obvious, most important realities are the ones that are hardest to see." - David Foster Wallace<br/>
