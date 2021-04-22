@@ -97,7 +97,7 @@ export default function AboutSection() {
             <br /><br />   
             A google form and sheet track my consumption and quantifies it via a series of formulas and tabs. A bash script accesses the required data from the google sheet, creates, signs, and transmits my daily consumption to the blockchain.
             <br /><br />   
-            A modified version of <a href="https://github.com/janoside/btc-rpc-explorer" target="_blank" rel="noopener noreferrer">BTC-RCP-EXPLORER</a> allows me to access all transactions with OP_RETURN messages, and a simple API lets me expose that data to the weconsu.me website.
+            A modified version of <a href="https://github.com/janoside/btc-rpc-explorer" target="_blank" rel="noopener noreferrer">BTC-RPC-EXPLORER</a> allows me to access all transactions with OP_RETURN messages, and a simple API lets me expose that data to the weconsu.me website.
             <br /><br />   
             The weconsu.me website is my first attempt at a reactjs site. Built on a Material UI template, It accesses the block explorer API and uses several components to display the futurescape GAN animations based on my consumption. There is also a simplified tool to allow other users to quantify their emissions. A p5 sketch and the RunwayML hosted model API will enable them to generate a styleGAN still based on their emissions.  The p5 sketch code was based on Roy Macdonald’s awesome <a href="https://github.com/roymacdonald/roymacdonald.github.io/blob/master/stylegan-transition.js" target="_blank" rel="noopener noreferrer">styleGan mixer</a>.
             <br /><br />   
