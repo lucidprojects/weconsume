@@ -81,6 +81,11 @@ It's the idea that inequality is bad. It's the idea that money created out of th
 "The most obvious, most important realities are the ones that are hardest to see." - David Foster Wallace<br/>
 <a href="https://www.microstrategy.com/en/bitcoin/documents/stone-ridge-2020-shareholder-letter" target="_blank" rel="noopener noreferrer">Stoneridge 2020 Shareholder Letter</a>
 <br /><br />
+
+
+"Bitcoin is a settlement system like FedWire, not a payments aggregator like Visa.  Unless we’re all willing to spend just a little more time and effort analyzing the potential in necessary depth, we risk missing out on an incredible and time-sensitive opportunity. That would be a waste."<br/>
+<a href="https://coinshares.com/research/closer-look-environmental-impact-of-bitcoin-mining" target="_blank" rel="noopener noreferrer">Christopher Bendiksen March 2021</a>
+<br /><br />
 </h5>
 <h3>How to Bitcoin reading:</h3>
  <h5 className={classes.description}>
