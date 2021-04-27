@@ -51,7 +51,7 @@ export default function ChangeSection() {
           </GridItem>
           <GridItem xs={12} sm={12} md={4}>
             <InfoArea
-              title="Talk about it"
+              title="Talk About It"
               description=""
               icon={Chat}
               iconColor="danger"
