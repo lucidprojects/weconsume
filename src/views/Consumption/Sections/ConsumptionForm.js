@@ -185,13 +185,20 @@ export default function ConsumptionForm() {
     } 
 
     let mkCalc = parseInt(travel) * parseInt(purchase);
-    co2Calc = parseFloat(travel) * (travelVal / 1000) + parseFloat(purchase) * purchaseVal + dietVal + wasteVal;
+    co2Calc = parseFloat(travel) * (travelVal / 1000) + parseFloat(purchase) * purchaseVal + dietVal + (wasteVal / 7);
     co2Calc = co2Calc.toFixed(2);
     let tCo2 = parseFloat(travel) * (travelVal / 1000)
     let pCo2 = parseFloat(purchase) * purchaseVal;
+    let wasteDaily = parseFloat(wasteVal / 7);
+
     annualCo2 = (co2Calc * 365) / 1000;
     annualCo2 = annualCo2.toFixed(2);
-    if(selectedMode !== '') return`≈ ${co2Calc}kg = travel emissions = ${tCo2}kg + purchase emissions ${pCo2}kg + diet emissions ${dietVal}kg + waste emissions ${wasteVal}kg `;
+
+    tCo2 = tCo2.toFixed(2);
+    pCo2 = pCo2.toFixed(2);
+    wasteDaily = wasteDaily.toFixed(2);
+
+    if(selectedMode !== '') return`≈ ${co2Calc}kg. travel emissions = ${tCo2}kg, purchase emissions ${pCo2}kg, diet emissions ${dietVal}kg, waste emissions ${wasteDaily}kg - *Note this is only an estimate.`;
     else return`${mkCalc} = ${travel} * ${purchase}  was !number, but is now`;
     
   } 
@@ -237,8 +244,8 @@ export default function ConsumptionForm() {
           <h4 className={classes.description}>
             Input your estimated average daily consumption behavior to get a rough estimate.
           </h4>
-          {co2Calc && <h2 className={classes.title}>Your Annual Emissions ≈ {annualCo2}mt</h2>}
-          <h4>Your Daily Emissions: {myVal}</h4>
+          {/* {co2Calc && <h2 className={classes.title}>Your Annual Emissions ≈ {annualCo2}mt</h2>}
+          <h4>Your Daily Emissions: {myVal}</h4> */}
 
        <form>
       
@@ -259,13 +266,15 @@ export default function ConsumptionForm() {
         <Select id="diet" options={dietOptions} value={dietOptions.filter(obj => obj.value === selectedDiet)} onChange={handleDietChange}/>
       </label><br />
        <label>
-        How much waste do you usually throw out per day? (average)
+        How much waste do you generate? (input average weekly.  will calculate daily)
         <Select id="waste" options={wasteOptions} value={wasteOptions.filter(obj => obj.value === selectedWaste)} onChange={handleWasteChange}
         />
       </label><br />
-     
+         
       {/* <Button color="primary" type="submit" value="Submit">Generate Your Futurescape GAN?</Button>  */}
     </form>
+       {co2Calc && <h2 className={classes.title}>Your Annual Emissions ≈ {annualCo2}mt</h2>}
+          <h4>Your Daily Emissions: {myVal}</h4>    
       <WindowDims />
       {(co2Calc) ?  
       <div>
