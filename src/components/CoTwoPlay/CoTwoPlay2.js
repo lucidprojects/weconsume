@@ -74,7 +74,7 @@ export default function CoTwoInfo2({ name }) {
 		{(myCo2eV) ?
 		<h3>Futurescape GAN =  {(myCo2eV > co2Thresh) ? 
 		ranVid === 1 ? `Over population, air pollution, smog, rising temperatures, and crumbling infrastructure paint a bleak future, based on ${myCo2eV}kg, above` : `Flooding, fires, droughts, and waste. The future of a warming planet, based on ${myCo2eV}kg, above` : 
-		ranVid === 1 ? `A more vibrate, symbiotic relationship between humans and the planet creates a homogenous future based on ${myCo2eV}kg, at or below` : `Climate change starts with equality. We need to come together to cherish each other and the planet. A more equitable future based on ${myCo2eV}kg, at or below` } the goal of 12.32kg daily emissions. </h3> : <span></span>}
+		ranVid === 1 ? `A more vibrate, symbiotic relationship between humans and the planet creates a more harmonious future based on ${myCo2eV}kg, at or below` : `Climate change starts with equality. We need to come together to cherish each other and the planet. A more equitable future based on ${myCo2eV}kg, at or below` } the goal of 12.32kg daily emissions. </h3> : <span></span>}
 		{/* <h3>Futurescape GAN = a {(myCo2eV > co2Thresh) ? `bleak future based on ${myCo2eV}kg above` : `more homogenous future based on ${myCo2eV}kg at or below`} a goal of 12.32kg daily emissions. </h3> : <span></span>} */}
 		<div className="hide">
 			{(ranVid === 1) ?
